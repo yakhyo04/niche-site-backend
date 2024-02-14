@@ -5,7 +5,7 @@ const path = require("path");
 const cors = require("cors");
 
 app.use(cors({
-    origin: 'http://localhost:3000'
+    origin: 'https://best-sites.netlify.app'
 }));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
