@@ -10,6 +10,13 @@ app.use(cors({
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
+    fs.readFile(path.resolve(__dirname, './data/data.js'), (err, data) => {
+        if(err) throw err;
+        res.json(JSON.parse(data))
+    })
+})
+
 app.post("/post", (req, res) => {
     console.log(req.body);
     fs.readFile(path.resolve(__dirname, './data/data.js'), (err, data) => {
